@@ -54,4 +54,6 @@ registry:
       create-agent:
         description: "this skill is used to create new agent"
         source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/create-agent
-
+      arm:
+        source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/arm
+        description: ""

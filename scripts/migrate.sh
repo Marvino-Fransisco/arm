@@ -243,6 +243,7 @@ migrate_folder() {
   if [ "$item_type" = "skill" ]; then
     for dir in "$src"/*/; do
       [ -d "$dir" ] || continue
+      [ "$(basename "$dir")" = "arm" ] && { log_warn "skipping reserved skill 'arm'"; continue; }
       items+=("$(basename "$dir")")
     done
   else
@@ -282,6 +283,14 @@ migrate_item() {
   local total="$4"
 
   local label="${item_type}:${item_name}"
+
+  if [ "$item_type" = "skill" ] && [ "$item_name" = "arm" ]; then
+    log_step "[$idx/$total] ${BOLD}$label${RESET}"
+    log_warn "skipping reserved skill 'arm'"
+    SKIPPED+=("$label")
+    return
+  fi
+
   local folder="${item_type}s"
   local src="$SOURCE_BASE/$folder"
   local dest
