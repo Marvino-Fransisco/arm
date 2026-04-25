@@ -9,10 +9,8 @@ This document is auto-generated from `registry.yaml`. Do not edit manually.
 | Name | Platform | Contributor |
 |------|----------|-------------|
 | `backend-designer` | `opencode` | `mf` |
-| `code-security` | `opencode` | `mf` |
 | `data-designer` | `opencode` | `mf` |
 | `frontend-designer` | `opencode` | `mf` |
-| `prompt-engineer` | `opencode` | `mf` |
 | `researcher` | `opencode` | `mf` |
 | `software-engineer` | `opencode` | `mf` |
 
@@ -30,4 +28,4 @@ This document is auto-generated from `registry.yaml`. Do not edit manually.
 
 ---
 
-_Last updated: 2026-04-25 12:59 • 7 agents • 7 skills_
+_Last updated: 2026-04-25 21:01 • 5 agents • 7 skills_

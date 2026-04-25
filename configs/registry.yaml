@@ -6,10 +6,6 @@ registry:
           description: Backend designer (API, Architecture, Optimization, Scalability, Long Term)
           source: https://github.com/Marvino-Fransisco/agent-registry/blob/main/agents/opencode/backend-designer.md
           skills: [backend]
-        code-security:
-          description: Code Security Agent (Frontend & Backend Security, Best Practices, Threat Modeling, Compliance)
-          source: https://github.com/Marvino-Fransisco/agent-registry/blob/main/agents/opencode/bcode-security.md
-          skills: [code-security]
         data-designer:
           description: Data Designer (Modeling, Pipelines, Analytics, Governance, Long Term)
           source: https://github.com/Marvino-Fransisco/agent-registry/blob/main/agents/opencode/bdata-designer.md
@@ -18,9 +14,6 @@ registry:
           description: Frontend designer (UI, Codes, Optimization, Scalability, Long Term)
           source: https://github.com/Marvino-Fransisco/agent-registry/blob/main/agents/opencode/bfrontend-designer.md
           skills: [frontend]
-        prompt-engineer:
-          description: Prompt Refinement (Clarity, Persona, Chain-of-Thought, Few-Shot, Evaluation, Iteration, LLM-agnostic)
-          source: https://github.com/Marvino-Fransisco/agent-registry/blob/main/agents/opencode/bprompt-engineer.md
         researcher:
           description: Researcher (Technology, Architecture, Libraries, Tools, Trends, Deep Dives)
           source: https://github.com/Marvino-Fransisco/agent-registry/blob/main/agents/opencode/bresearcher.md
@@ -54,6 +47,3 @@ registry:
       create-agent:
         description: "this skill is used to create new agent"
         source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/create-agent
-      arm:
-        source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/arm
-        description: ""
