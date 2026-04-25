@@ -1,7 +1,7 @@
 ---
 name: arm
 description: >
-  Activate this skill when receive `arm` as the first word in the message. This skill provides instructions for interacting with the agent registry system.
+  Activate this skill when receive `arm` as the first word in the message.
 metadata:
   version: "1.0.0"
   author: Marvino-Fransisco
