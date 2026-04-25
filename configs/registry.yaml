@@ -26,9 +26,6 @@ registry:
       claudecode:
   skills:
     mf:
-      code-security:
-        description: Use this skill when doing any frontend and backend code security work
-        source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/code-security
       data-design:
         description: Use this skill when doing any data design, database, and data pipeline work
         source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/data-design

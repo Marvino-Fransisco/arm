@@ -18,7 +18,6 @@ This document is auto-generated from `registry.yaml`. Do not edit manually.
 
 | Name | Contributor |
 |------|-------------|
-| `code-security` | `mf` |
 | `data-design` | `mf` |
 | `frontend` | `mf` |
 | `research` | `mf` |
@@ -28,4 +27,4 @@ This document is auto-generated from `registry.yaml`. Do not edit manually.
 
 ---
 
-_Last updated: 2026-04-25 21:01 • 5 agents • 7 skills_
+_Last updated: 2026-04-25 21:35 • 5 agents • 6 skills_
