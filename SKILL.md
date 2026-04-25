@@ -124,7 +124,9 @@ Do not request the user’s platform or scope when the following variables are a
   - `sync`
   - `list`
   - `migrate`
+  - `remove-registry`
   - `push`
+  - `pull`
   - `help`
 
 - [ ] If the `<sub-command>` is invalid or missing, return the correct usage format.
@@ -159,6 +161,12 @@ Do not request the user’s platform or scope when the following variables are a
   - Must include `--contributor <name>`.
   - Optionally include `<registry...>` filters.
   - Reject if `--contributor` is missing.  
+
+- [ ] `remove-registry`
+  - Must include `--contributor <name>`.
+  - Must include at least one `<registry...>`.
+  - Reject if `--contributor` is missing.
+  - Reject if no registry is provided.
 
 - [ ] `push`
   - Must include exactly one `<repository>`.  
