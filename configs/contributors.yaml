@@ -1,0 +1,6 @@
+contributors:
+  mf:
+    gh-app-id: MF_GH_APP_ID
+    gh-app-key: MF_GH_APP_KEY_PATH
+    gh-repo:
+      - https://github.com/Marvino-Fransisco/agent-registry.git
