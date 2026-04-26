@@ -11,7 +11,7 @@ require_cmd yq
 
 usage() {
   cat <<EOF
-Usage: $(basename "$0") --contributor <name> <scope> <platform> [items...]
+Usage: $(basename "$0") --contributor <name> [--all] <scope> <platform> [items...]
 
 Migrate agents, skills, commands, and prompts from a platform config
 directory into the local agent-registry repository at ~/agent-registry/.
@@ -24,6 +24,7 @@ contributor.
 
 Options:
   --contributor <name>  Contributor key from contributors.yaml (required)
+  --all, -a             Migrate all items (cannot be combined with filters)
 
 Arguments:
   scope     global | local
@@ -46,6 +47,7 @@ Destination mapping:
 
 Examples:
   $(basename "$0") --contributor mf local opencode
+  $(basename "$0") --contributor mf --all local opencode
   $(basename "$0") --contributor mf local opencode agent:builder skill:research
   $(basename "$0") --contributor mf global claude agent:designer command:review
 EOF
@@ -53,6 +55,7 @@ EOF
 }
 
 CONTRIBUTOR=""
+MIGRATE_ALL=""
 
 POSITIONAL=()
 while [ $# -gt 0 ]; do
@@ -61,6 +64,10 @@ while [ $# -gt 0 ]; do
       [ $# -lt 2 ] && { echo "Error: --contributor requires a value" >&2; exit 1; }
       CONTRIBUTOR="$2"
       shift 2
+      ;;
+    --all|-a)
+      MIGRATE_ALL=1
+      shift
       ;;
     *)
       POSITIONAL+=("$1")
@@ -96,6 +103,11 @@ for arg in "$@"; do
   fi
   FILTERS+=("$arg")
 done
+
+if [ -n "$MIGRATE_ALL" ] && [ ${#FILTERS[@]} -gt 0 ]; then
+  echo "Error: --all cannot be used with specific item filters" >&2
+  usage
+fi
 
 case "$SCOPE" in
   global) SOURCE_ROOT="$HOME" ;;

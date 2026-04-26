@@ -159,7 +159,9 @@ Do not request the user’s platform or scope when the following variables are a
 
 - [ ] `migrate`
   - Must include `--contributor <name>`.
-  - Optionally include `<registry...>` filters.
+  - Optionally include `--all` or `-a` to explicitly migrate all items.
+  - `--all` / `-a` is mutually exclusive with `<registry...>` filters. Reject if both are present.
+  - Optionally include `<registry...>` filters (only when `--all` is not used).
   - Reject if `--contributor` is missing.  
 
 - [ ] `remove-registry`

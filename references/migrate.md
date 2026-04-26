@@ -34,15 +34,16 @@
 ### `scripts/migrate.sh`
 
 ```bash
-scripts/migrate.sh --contributor <name> <scope> <platform> [items...]
+scripts/migrate.sh --contributor <name> [--all] <scope> <platform> [items...]
 ```
 
 | Arg | Values |
 | ----- | -------- |
 | `--contributor` | Contributor key from `contributors.yaml` (required) |
+| `--all`, `-a` | Migrate all items (mutually exclusive with item filters) |
 | `scope` | `local` (current project) or `global` (home directory) |
 | `platform` | `opencode` or `claude` |
-| `items` | Optional filters: `agent:<name>`, `skill:<name>`, `command:<name>`, `prompt:<name>`. When omitted, all items are migrated. |
+| `items` | Optional filters: `agent:<name>`, `skill:<name>`, `command:<name>`, `prompt:<name>`. When omitted, all items are migrated. Cannot be used with `--all`. |
 
 **Behavior:**
 
@@ -63,6 +64,7 @@ prompts/  → ~/agent-registry/prompts/
 
 ```bash
 scripts/migrate.sh --contributor mf local opencode
+scripts/migrate.sh --contributor mf --all local opencode
 scripts/migrate.sh --contributor mf local opencode agent:builder skill:research
 scripts/migrate.sh --contributor mf global claude agent:designer command:review
 ```
@@ -70,6 +72,7 @@ scripts/migrate.sh --contributor mf global claude agent:designer command:review
 **Error handling:**
 
 - Missing `--contributor` flag → logs error and exits
+- `--all` used with item filters → logs error and exits
 - Invalid contributor key → logs error and exits
 - Source directory does not exist → logs error and exits
 - Source folder does not exist → logs warning, skips, continues
