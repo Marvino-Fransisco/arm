@@ -33,14 +33,14 @@ To manage agent registries, use the following rules, variables, and procedures:
 | OPENCODE_GLOBAL    | ~/.config/opencode/                        |
 | OPENCODE_LOCAL     | ./.opencode/                               |
 | PI_GLOBAL          | ~/.pi/agent/                               |
-| PI_LOCAL           | ./.pi/
+| PI_LOCAL           | ./.pi/                                     |
 | REGISTRY           | ~/agent-registry                           |
 | AGENT_REGISTRY     | {{REGISTRY}}/agents/{{USER_PLATFORM}}      |
 | SKILL_REGISTRY     | {{REGISTRY}}/skills                        |
 | COMMAND_REGISTRY   | {{REGISTRY}}/commands                      |
 | PROMPT_REGISTRY    | {{REGISTRY}}/prompts                       |
 | COMMAND            | [command](references/help.md)              |
-| AVAILABLE_PLATFORM | OpenCode, Claude Code                      |
+| AVAILABLE_PLATFORM | OpenCode, Claude Code, Pi                  |
 | INSTALL_SCOPE      | Global, Local                              |
 
 ---
