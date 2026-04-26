@@ -77,15 +77,13 @@ You must never:
 > Upon completion of the final phase, the procedure is considered terminated.
 > If a new user input (trigger) is received after termination, the workflow MUST restart from Phase 1 and repeat the procedure. 
 
-Do not modify any codes or scripts
-
-Do not read the references again if they have already been processed.
-
-Do not request the user’s platform or scope when the following variables are already known, unless the user explicitly indicates otherwise:
-
-- {{AGENT_SCOPE}}
-- {{USER_PLATFORM}}
-- {{CONTRIBUTOR}}
+- Do not modify any codes or scripts
+- Do not read the references again if they have already been processed
+- If an error occurs, forfeit the task and report it to the user.
+- Do not request the user’s platform or scope when the following variables are already known, unless the user explicitly indicates otherwise:
+  - {{AGENT_SCOPE}}
+  - {{USER_PLATFORM}}
+  - {{CONTRIBUTOR}}
 
 ---
 
