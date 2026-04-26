@@ -30,8 +30,10 @@ To manage agent registries, use the following rules, variables, and procedures:
 | ------------------ | ------------------------------------------ |
 | CLAUDE_GLOBAL      | ~/.claude/                                 |
 | CLAUDE_LOCAL       | ./.claude/                                 |
-| OPENCODE_GLOBAL    | ~/.config/opencode                         |
-| OPENCODE_LOCAL     | ./.opencode/agents                         |
+| OPENCODE_GLOBAL    | ~/.config/opencode/                        |
+| OPENCODE_LOCAL     | ./.opencode/                               |
+| PI_GLOBAL          | ~/.pi/agent/                               |
+| PI_LOCAL           | ./.pi/
 | REGISTRY           | ~/agent-registry                           |
 | AGENT_REGISTRY     | {{REGISTRY}}/agents/{{USER_PLATFORM}}      |
 | SKILL_REGISTRY     | {{REGISTRY}}/skills                        |
