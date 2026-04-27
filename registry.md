@@ -19,12 +19,11 @@ This document is auto-generated from `registry.yaml`. Do not edit manually.
 | Name | Contributor |
 |------|-------------|
 | `data-design` | `mf` |
-| `frontend` | `mf` |
 | `research` | `mf` |
 | `software-engineering` | `mf` |
-| `backend` | `mf` |
 | `create-agent` | `mf` |
+| `create-skill` | `mf` |
 
 ---
 
-_Last updated: 2026-04-27 08:21 • 5 agents • 6 skills_
+_Last updated: 2026-04-27 17:56 • 5 agents • 5 skills_

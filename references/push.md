@@ -2,9 +2,9 @@
 
 ## Flow
 
-1. Determine the target from {{USER_INTENT}} — either `arm` or `registry`.
+1. Determine the repository from {{USER_INTENT}} — either `arm` or `registry`.
 
-2. Run the push script with the target.
+2. Run the push script with the repository.
 
 3. After the script finishes, display the result to the user based on the output:
 
@@ -32,14 +32,14 @@
 ### `scripts/push.sh`
 
 ```bash
-scripts/push.sh <target>
+scripts/push.sh <repository>
 ```
 
 | Arg | Values |
 | ----- | -------- |
-| `target` | `arm`, `registry` |
+| `repository` | `arm`, `registry` |
 
-**Targets:**
+**Repositories:**
 
 - `arm` — pushes changes in the arm project directory (`$ROOT_DIR`)
 - `registry` — pushes changes in `$HOME/agent-registry`

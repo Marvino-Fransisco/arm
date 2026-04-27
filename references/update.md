@@ -35,6 +35,7 @@
 
 ```bash
 scripts/update.sh <platform> [scope] <registry...>
+scripts/update.sh <platform> [scope] --all
 ```
 
 | Arg | Values |
@@ -42,6 +43,12 @@ scripts/update.sh <platform> [scope] <registry...>
 | `platform` | `opencode`, `claudecode`, `pi` |
 | `scope` | `local` (default) or `global` |
 | `registry` | one or more `type:name` pairs |
+
+**Options:**
+
+| Flag | Description |
+| ----- | -------- |
+| `--all`, `-a` | Update all installed items (mutually exclusive with registry args) |
 
 **Registry patterns:**
 
@@ -58,6 +65,8 @@ prompt:{name}
 scripts/update.sh opencode skill:backend
 scripts/update.sh opencode local skill:backend agent:researcher
 scripts/update.sh claudecode global skill:frontend agent:designer
+scripts/update.sh opencode --all
+scripts/update.sh claudecode global --all
 ```
 
 **Error handling:**

@@ -29,18 +29,15 @@ registry:
       data-design:
         description: Use this skill when doing any data design, database, and data pipeline work
         source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/data-design
-      frontend:
-        description: Use this skill when doing any frontend work
-        source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/frontend
       research:
         description: Use this skill when doing any researches
         source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/research
       software-engineering:
         description: Use this skill when doing any programming and engineering work
         source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/software-engineering
-      backend:
-        description: "this skill is used when doing any backend work"
-        source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/backend
       create-agent:
         description: "this skill is used to create new agent"
         source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/create-agent
+      create-skill:
+        source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/create-skill
+        description: ""

@@ -330,7 +330,9 @@ get_target_dir() {
   raw=$(yq -r ".default_dirs.\"$platform\".\"$type_key\"[] | select(.$key) | .$key" "$DIRS" 2>/dev/null)
 
   if [ -n "$raw" ] && [ "$raw" != "null" ]; then
-    if [[ "$raw" != /* ]]; then
+    if [[ "$raw" == "~"* ]]; then
+      echo "${HOME}${raw#\~}"
+    elif [[ "$raw" != /* ]]; then
       local proj_root
       proj_root=$(find_project_root)
       echo "${proj_root}/${raw}"

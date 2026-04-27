@@ -138,9 +138,14 @@ You must never:
 
 #### Sub-command Argument Rules
 
-- [ ] `install`, `update`, `delete`
+- [ ] `install`
   - Must include at least one `<registry...>`.  
-  - Reject if no registry is provided.  
+  - Reject if no registry is provided.
+
+- [ ] `update`, `delete`
+  - Must include at least one `<registry...>`, or use `--all` / `-a` to update/delete all installed items.
+  - `--all` / `-a` is mutually exclusive with `<registry...>` filters. Reject if both are present.
+  - Reject if no registry is provided and `--all` is not used.  
 
 - [ ] `sync`, `list`, `help`
   - Must NOT include any additional arguments.
