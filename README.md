@@ -174,7 +174,7 @@ registry:
 ARM authenticates via **GitHub App**. See [docs/setup-github-app.md](docs/setup-github-app.md) for full setup instructions.
 
 | Scenario | How it works |
-|---------- |--------------|
+| ---------- |--------------|
 | Public repo | Works without any authentication |
 | Private repo | GitHub App generates short-lived installation tokens from `.env` credentials |
 
