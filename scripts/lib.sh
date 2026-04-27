@@ -314,7 +314,7 @@ get_target_dir() {
   local platform="$1"
   local type="$2"
   local scope="$3"
-  local key="default"
+  local key="local"
   [ "$scope" = "global" ] && key="global"
 
   local type_key

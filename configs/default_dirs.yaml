@@ -1,31 +1,31 @@
 default_dirs:
   opencode:
     agents:
-      - default: .opencode/agents/
+      - local: .opencode/agents/
       - global: ~/.config/opencode/agents/
     skills:
-      - default: .opencode/skills/
+      - local: .opencode/skills/
       - global: ~/.config/opencode/skills/
     commands:
-      - default: .opencode/commands/
+      - local: .opencode/commands/
       - global: ~/.config/opencode/commands/
   pi:
     skills:
-      - default: .pi/skills/
-      - global: ~/.pi/skills/
+      - local: .pi/skills/
+      - global: ~/.pi/agent/skills/
     commands:
-      - default: .pi/commands/
-      - global: ~/.pi/commands/
+      - local: .pi/commands/
+      - global: ~/.pi/agent/commands/
   claudecode:
     agents:
-      - default: .claude/agents/
+      - local: .claude/agents/
       - global: ~/.claude/agents/
     skills:
-      - default: .claude/skills/
+      - local: .claude/skills/
       - global: ~/.claude/skills/
     commands:
-      - default: .claude/commands/
+      - local: .claude/commands/
       - global: ~/.claude/commands/
     prompts:
-      - default: .claude/prompts/
+      - local: .claude/prompts/
       - global: ~/.claude/prompts/

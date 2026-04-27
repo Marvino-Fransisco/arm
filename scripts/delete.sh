@@ -14,7 +14,7 @@ Delete one or more installed agents or skills. Items must exist in registry.yaml
 
 Arguments:
   platform   opencode | claudecode | pi
-  scope      project (default) | global
+  scope      local (default) | global
   registry   type:name pairs (e.g., skill:backend agent:researcher)
 
 Options:
@@ -28,7 +28,7 @@ Registry patterns:
 
 Examples:
   $(basename "$0") opencode skill:backend
-  $(basename "$0") opencode project skill:backend agent:researcher
+  $(basename "$0") opencode local skill:backend agent:researcher
   $(basename "$0") claudecode global skill:frontend agent:designer
   $(basename "$0") opencode --all
   $(basename "$0") claudecode global --all
@@ -53,11 +53,11 @@ shift
 
 validate_platform "$PLATFORM" || exit 1
 
-if [[ "${1:-}" == "project" || "${1:-}" == "global" ]]; then
+if [[ "${1:-}" == "local" || "${1:-}" == "global" ]]; then
   SCOPE="$1"
   shift
 else
-  SCOPE="project"
+  SCOPE="local"
 fi
 
 if [ "$ALL_MODE" = true ]; then

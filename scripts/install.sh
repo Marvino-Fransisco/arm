@@ -13,7 +13,7 @@ Install one or more agents or skills from the registry.
 
 Arguments:
   platform   opencode | claudecode | pi
-  scope      project (default) | global
+  scope      local (default) | global
   registry   type:name pairs (e.g., skill:backend agent:researcher)
 
 Registry patterns:
@@ -24,7 +24,7 @@ Registry patterns:
 
 Examples:
   $(basename "$0") opencode skill:backend
-  $(basename "$0") opencode project skill:backend agent:researcher
+  $(basename "$0") opencode local skill:backend agent:researcher
   $(basename "$0") claudecode global skill:frontend skill:backend agent:designer
 EOF
   exit 1
@@ -37,11 +37,11 @@ shift
 
 validate_platform "$PLATFORM" || exit 1
 
-if [[ "$1" == "project" || "$1" == "global" ]]; then
+if [[ "$1" == "local" || "$1" == "global" ]]; then
   SCOPE="$1"
   shift
 else
-  SCOPE="project"
+  SCOPE="local"
 fi
 
 [ $# -eq 0 ] && usage
