@@ -195,5 +195,6 @@ contributors:
 |----------|--------|--------|----------|---------|
 | opencode | `.opencode/agents/` | `.opencode/skills/` | `.opencode/commands/` | — |
 | claudecode | `.claude/agents/` | `.claude/skills/` | `.claude/commands/` | `.claude/prompts/` |
+| pi | - | `.pi/agent/skills/` | `.pi/agent/commands/` | `.pi/agent/prompts/` |
 
 Each directory supports `project` (relative) and `global` (absolute `~/`) scopes.
