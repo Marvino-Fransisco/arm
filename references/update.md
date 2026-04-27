@@ -40,7 +40,7 @@ scripts/update.sh <platform> [scope] <registry...>
 | Arg | Values |
 | ----- | -------- |
 | `platform` | `opencode`, `claudecode`, `pi` |
-| `scope` | `project` (default) or `global` |
+| `scope` | `local` (default) or `global` |
 | `registry` | one or more `type:name` pairs |
 
 **Registry patterns:**
@@ -56,7 +56,7 @@ prompt:{name}
 
 ```bash
 scripts/update.sh opencode skill:backend
-scripts/update.sh opencode project skill:backend agent:researcher
+scripts/update.sh opencode local skill:backend agent:researcher
 scripts/update.sh claudecode global skill:frontend agent:designer
 ```
 

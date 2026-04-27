@@ -41,7 +41,7 @@ scripts/delete.sh <platform> [scope] <registry...>
 | Arg | Values |
 | ----- | -------- |
 | `platform` | `opencode`, `claudecode`, `pi` |
-| `scope` | `project` (default) or `global` |
+| `scope` | `local` (default) or `global` |
 | `registry` | one or more `type:name` pairs |
 
 **Registry patterns:**
@@ -57,7 +57,7 @@ prompt:{name}
 
 ```bash
 scripts/delete.sh opencode skill:backend
-scripts/delete.sh opencode project skill:backend agent:researcher
+scripts/delete.sh opencode local skill:backend agent:researcher
 scripts/delete.sh claudecode global skill:frontend agent:designer
 ```
 

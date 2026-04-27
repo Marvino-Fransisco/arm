@@ -41,7 +41,7 @@ scripts/migrate.sh --contributor <name> [--all] <scope> <platform> [items...]
 | ----- | -------- |
 | `--contributor` | Contributor key from `contributors.yaml` (required) |
 | `--all`, `-a` | Migrate all items (mutually exclusive with item filters) |
-| `scope` | `local` (current project) or `global` (home directory) |
+| `scope` | `local` (current directory) or `global` (home directory) |
 | `platform` | `opencode` or `claude` |
 | `items` | Optional filters: `agent:<name>`, `skill:<name>`, `command:<name>`, `prompt:<name>`. When omitted, all items are migrated. Cannot be used with `--all`. |
 

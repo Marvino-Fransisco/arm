@@ -49,7 +49,7 @@ find_project_root() {
     echo "$dir"
     return
   fi
-  dir="$ROOT_DIR"
+  dir="$PWD"
   while [ "$dir" != "/" ]; do
     if [ -d "$dir/.opencode" ] || [ -d "$dir/.claude" ] || [ -d "$dir/.pi" ]; then
       echo "$dir"
