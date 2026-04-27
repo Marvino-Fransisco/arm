@@ -76,8 +76,52 @@ if [ "$has_skills" = false ]; then
   echo "_No skills registered._" >> "$TMP_OUTPUT"
 fi
 
+echo -e "\n## Commands\n" >> "$TMP_OUTPUT"
+
+command_count=0
+has_commands=false
+
+for contributor in $(yq '.registry.commands | keys | .[]' "$REGISTRY" 2>/dev/null); do
+  names=$(yq ".registry.commands.\"$contributor\" | keys | .[]" "$REGISTRY" 2>/dev/null) || continue
+
+  [ -z "$names" ] && continue
+
+  for name in $names; do
+    [ "$has_commands" = false ] && { echo "| Name | Contributor |" >> "$TMP_OUTPUT"; echo "|------|-------------|" >> "$TMP_OUTPUT"; has_commands=true; }
+
+    echo "| \`$(sanitize_md "$name")\` | \`$(sanitize_md "$contributor")\` |" >> "$TMP_OUTPUT"
+    command_count=$((command_count + 1))
+  done
+done
+
+if [ "$has_commands" = false ]; then
+  echo "_No commands registered._" >> "$TMP_OUTPUT"
+fi
+
+echo -e "\n## Prompts\n" >> "$TMP_OUTPUT"
+
+prompt_count=0
+has_prompts=false
+
+for contributor in $(yq '.registry.prompts | keys | .[]' "$REGISTRY" 2>/dev/null); do
+  names=$(yq ".registry.prompts.\"$contributor\" | keys | .[]" "$REGISTRY" 2>/dev/null) || continue
+
+  [ -z "$names" ] && continue
+
+  for name in $names; do
+    [ "$has_prompts" = false ] && { echo "| Name | Contributor |" >> "$TMP_OUTPUT"; echo "|------|-------------|" >> "$TMP_OUTPUT"; has_prompts=true; }
+
+    echo "| \`$(sanitize_md "$name")\` | \`$(sanitize_md "$contributor")\` |" >> "$TMP_OUTPUT"
+    prompt_count=$((prompt_count + 1))
+  done
+done
+
+if [ "$has_prompts" = false ]; then
+  echo "_No prompts registered._" >> "$TMP_OUTPUT"
+fi
+
 echo -e "\n---\n" >> "$TMP_OUTPUT"
-echo "_Last updated: $(date '+%Y-%m-%d %H:%M') • $agent_count agents • $skill_count skills_" >> "$TMP_OUTPUT"
+echo "_Last updated: $(date '+%Y-%m-%d %H:%M') • $agent_count agents • $skill_count skills • $command_count commands • $prompt_count prompts_" >> "$TMP_OUTPUT"
 
 if [ -f "$OUTPUT" ]; then
   DIFF_OLD=$(grep -v '_Last updated:' "$OUTPUT" || true)
@@ -85,7 +129,7 @@ if [ -f "$OUTPUT" ]; then
 
   if [ "$DIFF_OLD" = "$DIFF_NEW" ]; then
     log_ok "No changes detected, $OUTPUT is up to date"
-    log_info "$agent_count agents, $skill_count skills"
+    log_info "$agent_count agents, $skill_count skills, $command_count commands, $prompt_count prompts"
     exit 0
   fi
 
@@ -109,7 +153,7 @@ fi
 
 mv "$TMP_OUTPUT" "$OUTPUT"
 log_ok "Generated $OUTPUT"
-log_info "$agent_count agents, $skill_count skills"
+log_info "$agent_count agents, $skill_count skills, $command_count commands, $prompt_count prompts"
 
 if [ -f "$ADDED_LOG" ] && [ -s "$ADDED_LOG" ]; then
   added_count=$(wc -l < "$ADDED_LOG" | tr -d ' ')

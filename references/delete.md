@@ -36,13 +36,20 @@
 
 ```bash
 scripts/delete.sh <platform> [scope] <registry...>
+scripts/delete.sh <platform> [scope] --all
 ```
 
 | Arg | Values |
 | ----- | -------- |
 | `platform` | `opencode`, `claudecode`, `pi` |
-| `scope` | `project` (default) or `global` |
+| `scope` | `local` (default) or `global` |
 | `registry` | one or more `type:name` pairs |
+
+**Options:**
+
+| Flag | Description |
+| ----- | -------- |
+| `--all`, `-a` | Delete all installed items (mutually exclusive with registry args) |
 
 **Registry patterns:**
 
@@ -57,8 +64,10 @@ prompt:{name}
 
 ```bash
 scripts/delete.sh opencode skill:backend
-scripts/delete.sh opencode project skill:backend agent:researcher
+scripts/delete.sh opencode local skill:backend agent:researcher
 scripts/delete.sh claudecode global skill:frontend agent:designer
+scripts/delete.sh opencode --all
+scripts/delete.sh claudecode global --all
 ```
 
 **Error handling:**

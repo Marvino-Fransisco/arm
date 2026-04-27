@@ -7,12 +7,12 @@ source "$SCRIPT_DIR/utils.sh"
 
 usage() {
   cat <<EOF
-Usage: $(basename "$0") <target>
+Usage: $(basename "$0") <repository>
 
 Pull changes from the arm or agent-registry repository.
 
 Arguments:
-  target    arm | registry
+  repository    arm | registry
 
 Examples:
   $(basename "$0") arm
@@ -23,9 +23,9 @@ EOF
 
 [ $# -ne 1 ] && usage
 
-TARGET="$1"
+REPOSITORY="$1"
 
-case "$TARGET" in
+case "$REPOSITORY" in
   arm)
     WORK_DIR="$ROOT_DIR"
     LABEL="arm"
@@ -35,7 +35,7 @@ case "$TARGET" in
     LABEL="agent-registry"
     ;;
   *)
-    log_fail "invalid target '$TARGET'. Use 'arm' or 'registry'."
+    log_fail "invalid repository '$REPOSITORY'. Use 'arm' or 'registry'."
     exit 1
     ;;
 esac
@@ -51,7 +51,7 @@ REMOTE_URL=$(git -C "$WORK_DIR" remote get-url origin 2>/dev/null || echo "unkno
 
 echo -e "\n${BOLD}${CYAN}╭──────────────────────────────────────${RESET}"
 echo -e "${BOLD}${CYAN}│ Agent Registry Manager — Pull${RESET}"
-echo -e "${BOLD}${CYAN}│${RESET} ${DIM}target: $LABEL · dir: $WORK_DIR${RESET}"
+echo -e "${BOLD}${CYAN}│${RESET} ${DIM}repository: $LABEL · dir: $WORK_DIR${RESET}"
 echo -e "${BOLD}${CYAN}╰──────────────────────────────────────${RESET}"
 
 LOCAL_HASH=$(git -C "$WORK_DIR" rev-parse --short HEAD 2>/dev/null || echo "unknown")

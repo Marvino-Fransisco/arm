@@ -39,7 +39,7 @@ scripts/install.sh <platform> [scope] <registry...>
 | Arg | Values |
 | ----- | -------- |
 | `platform` | `opencode`, `claudecode`, `pi` |
-| `scope` | `project` (default) or `global` |
+| `scope` | `local` (default) or `global` |
 | `registry` | one or more `type:name` pairs |
 
 **Registry patterns:**
@@ -55,7 +55,7 @@ prompt:{name}
 
 ```bash
 scripts/install.sh opencode skill:backend
-scripts/install.sh opencode project skill:backend agent:researcher
+scripts/install.sh opencode local skill:backend agent:researcher
 scripts/install.sh claudecode global skill:frontend skill:backend agent:designer
 ```
 
