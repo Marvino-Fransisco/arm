@@ -6,25 +6,12 @@ This document is auto-generated from `registry.yaml`. Do not edit manually.
 
 ## Agents
 
-| Name | Platform | Contributor |
-|------|----------|-------------|
-| `backend-designer` | `opencode` | `mf` |
-| `data-designer` | `opencode` | `mf` |
-| `frontend-designer` | `opencode` | `mf` |
-| `researcher` | `opencode` | `mf` |
-| `software-engineer` | `opencode` | `mf` |
+_No agents registered._
 
 ## Skills
 
-| Name | Contributor |
-|------|-------------|
-| `data-design` | `mf` |
-| `frontend` | `mf` |
-| `research` | `mf` |
-| `software-engineering` | `mf` |
-| `backend` | `mf` |
-| `create-agent` | `mf` |
+_No skills registered._
 
 ---
 
-_Last updated: 2026-04-25 21:35 • 5 agents • 6 skills_
+_Last updated: 2026-04-27 06:40 • 0 agents • 0 skills_
