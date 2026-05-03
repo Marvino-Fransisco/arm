@@ -196,8 +196,7 @@ get_token() {
 
   if [ -z "$app_id_env" ] || [ "$app_id_env" = "null" ] || \
      [ -z "$app_key_env" ] || [ "$app_key_env" = "null" ]; then
-    echo "Error: GitHub App not configured for contributor '$contributor'. Set gh-app-id and gh-app-key in contributors.yaml" >&2
-    return 1
+    return 0
   fi
 
   if ! [[ "$app_id_env" =~ ^[A-Za-z_][A-Za-z0-9_]*$ ]] || \
@@ -210,8 +209,7 @@ get_token() {
   local app_key_path="${!app_key_env:-}"
 
   if [ -z "$app_id" ] || [ -z "$app_key_path" ]; then
-    echo "Error: GitHub App credentials not found. Set $app_id_env and $app_key_env in .env" >&2
-    return 1
+    return 0
   fi
 
   local cache_key
