@@ -23,7 +23,16 @@ This document is auto-generated from `registry.yaml`. Do not edit manually.
 | `software-engineering` | `mf` |
 | `create-agent` | `mf` |
 | `create-skill` | `mf` |
+| `create-markdown` | `mf` |
+
+## Commands
+
+_No commands registered._
+
+## Prompts
+
+_No prompts registered._
 
 ---
 
-_Last updated: 2026-04-27 17:56 • 5 agents • 5 skills_
+_Last updated: 2026-05-08 12:30 • 5 agents • 6 skills • 0 commands • 0 prompts_
