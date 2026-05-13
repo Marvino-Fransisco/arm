@@ -44,3 +44,6 @@ registry:
       create-markdown:
         source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/create-markdown
         description: ""
+      backend:
+        source: https://github.com/Marvino-Fransisco/agent-registry/tree/main/skills/backend
+        description: ""
