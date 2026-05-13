@@ -24,6 +24,7 @@ This document is auto-generated from `registry.yaml`. Do not edit manually.
 | `create-agent` | `mf` |
 | `create-skill` | `mf` |
 | `create-markdown` | `mf` |
+| `backend` | `mf` |
 
 ## Commands
 
@@ -35,4 +36,4 @@ _No prompts registered._
 
 ---
 
-_Last updated: 2026-05-08 12:30 • 5 agents • 6 skills • 0 commands • 0 prompts_
+_Last updated: 2026-05-13 17:30 • 5 agents • 7 skills • 0 commands • 0 prompts_
