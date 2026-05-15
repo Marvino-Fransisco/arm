@@ -22,6 +22,9 @@ registry:
           description: Software Engineer (SOLID, Design Pattern, Architecture, Codes, Optimization, Scalability, Long Term)
           source: https://github.com/Marvino-Fransisco/agent-registry/blob/main/agents/opencode/bsoftware-engineer.md
           skills: [software-engineering]
+        product-manager:
+          source: https://github.com/Marvino-Fransisco/agent-registry/blob/main/agents/opencode/product-manager.md
+          description: ""
       pi:
       claudecode:
   skills:
